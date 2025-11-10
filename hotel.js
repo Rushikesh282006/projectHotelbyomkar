@@ -184,3 +184,19 @@ function decreaseQty(btn) {
         qtyInput.value = currentValue - 1;
     }
 }
+
+//After clicking on submit order button redirect to login page
+const orderForm = document.getElementById("orderForm");
+if (orderForm) {
+    orderForm.addEventListener("submit", (event) => {   
+        event.preventDefault();
+        if (orders.length === 0) {
+            alert("Your order is empty! Please add some dishes before submitting.");
+            return;
+        }
+        alert("Please login to submit your order.");
+        window.location.href = "login.html";
+    });
+}
+
+//After successful login redirect to home page
